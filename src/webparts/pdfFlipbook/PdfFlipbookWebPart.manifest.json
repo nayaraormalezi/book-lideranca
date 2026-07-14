@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "b6b87c5d-c0a0-4fa3-af84-d31ce8e73b36",
+  "alias": "PdfFlipbookWebPart",
+  "componentType": "WebPart",
+  "version": "1.0.0",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "b6b87c5d-c0a0-4fa3-af84-d31ce8e73b36",
+      "group": { "default": "General" },
+      "title": { "default": "PDF Flipbook" },
+      "description": { "default": "Professional PDF flipbook reader" },
+      "officeFabricIconFontName": "BookAnswers",
+      "properties": {
+        "pdfUrl": "",
+        "primaryColor": "#0078d4",
+        "toolbarColor": "#ffffff",
+        "backgroundColor": "#f3f2f1",
+        "showThumbnails": true,
+        "showZoom": true,
+        "showFullscreen": true,
+        "showPageCounter": true,
+        "openOnCover": true,
+        "openInDoublePage": true
+      }
+    }
+  ]
+}

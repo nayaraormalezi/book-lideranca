@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "outDir": "lib",
+    "types": ["webpack-env"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

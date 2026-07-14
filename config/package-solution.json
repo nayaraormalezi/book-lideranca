@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sharepoint-pdf-flipbook-client-side-solution",
+    "id": "8efbec3c-61d6-43e5-8f47-2ca1e8facdb1",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": false,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Contoso",
+      "websiteUrl": "https://www.contoso.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "PDF flipbook reader for SharePoint Online."
+      },
+      "longDescription": {
+        "default": "Professional, responsive PDF flipbook using PDF.js and StPageFlip."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "SharePoint PDF Flipbook Feature",
+        "description": "Deploys the PDF Flipbook web part.",
+        "id": "6dbb6d24-3b20-42c2-b789-e02790e45864",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "PdfFlipbookWebPart.manifest.json"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/sharepoint-pdf-flipbook.sppkg"
+  }
+}
