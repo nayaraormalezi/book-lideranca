@@ -30,12 +30,7 @@
         "title": "SharePoint PDF Flipbook Feature",
         "description": "Deploys the PDF Flipbook web part.",
         "id": "6dbb6d24-3b20-42c2-b789-e02790e45864",
-        "version": "1.0.0.0",
-        "assets": {
-          "elementManifests": [
-            "PdfFlipbookWebPart.manifest.json"
-          ]
-        }
+        "version": "1.0.0.0"
       }
     ]
   },

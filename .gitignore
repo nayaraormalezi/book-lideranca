@@ -1,0 +1,7 @@
+node_modules/
+lib/
+dist/
+temp/
+sharepoint/solution/
+release/
+coverage/

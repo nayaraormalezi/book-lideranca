@@ -1,12 +1,9 @@
 import { getDocument, GlobalWorkerOptions, PDFDocumentProxy, PDFPageProxy } from 'pdfjs-dist/legacy/build/pdf';
+import workerSrc from 'pdfjs-dist/legacy/build/pdf.worker.min.js';
 import { IPdfDocument, IPdfPage } from '../models/IFlipbookProps';
 
-// PDF.js ships the worker in the package. A same-origin worker URL avoids CORS
-// and permits the SharePoint workbench to load it under the tenant session.
-GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/legacy/build/pdf.worker.min.mjs',
-  import.meta.url
-).toString();
+// Webpack emits this dependency as a same-origin client-side asset.
+GlobalWorkerOptions.workerSrc = workerSrc;
 
 export class PdfService {
   public async open(data: ArrayBuffer): Promise<IPdfDocument> {
