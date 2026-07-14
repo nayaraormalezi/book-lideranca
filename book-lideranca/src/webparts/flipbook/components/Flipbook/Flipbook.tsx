@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PageFlip, type IPageFlipEvent } from 'page-flip';
 import { usePdf } from '../../hooks/usePdf';
-import { IFlipbookProps } from '../../models';
+import { IFlipbookProps, PdfReaderError } from '../../models';
 import { ErrorState } from '../Error/ErrorState';
 import { Loading } from '../Loading/Loading';
 import { ThumbnailPanel } from '../ThumbnailPanel/ThumbnailPanel';
@@ -22,6 +22,7 @@ export const Flipbook: React.FC<IFlipbookProps> = props => {
   const [renderVersion, setRenderVersion] = React.useState(0);
   const [thumbnailsExpanded, setThumbnailsExpanded] = React.useState(props.showThumbnails);
   const [isFullscreen, setIsFullscreen] = React.useState(false);
+  const [runtimeError, setRuntimeError] = React.useState<PdfReaderError>();
   const pdf = usePdf(props.pdfUrl, props.sharePointService, props.pdfService);
 
   React.useEffect(() => {
@@ -44,6 +45,7 @@ export const Flipbook: React.FC<IFlipbookProps> = props => {
       return () => undefined;
     }
 
+    setRuntimeError(undefined);
     let cancelled = false;
     let resizeObserver: ResizeObserver | undefined;
     const pageElements: HTMLElement[] = [];
@@ -117,7 +119,16 @@ export const Flipbook: React.FC<IFlipbookProps> = props => {
       resizeObserver.observe(stage);
     };
 
-    void initialize();
+    initialize().catch(error => {
+      if (!cancelled) {
+        setRuntimeError(new PdfReaderError(
+          'invalid-pdf',
+          'Não foi possível preparar as páginas deste PDF.',
+          undefined,
+          error
+        ));
+      }
+    });
 
     return () => {
       cancelled = true;
@@ -175,7 +186,7 @@ export const Flipbook: React.FC<IFlipbookProps> = props => {
         loading.style.display = '';
       }
 
-      void props.pdfService
+      props.pdfService
         .renderPage(pdf.document!, pageIndex + 1, canvas, targetWidth, zoom)
         .then(() => {
           if (canvas.dataset.renderKey === renderKey && loading) {
@@ -198,9 +209,9 @@ export const Flipbook: React.FC<IFlipbookProps> = props => {
 
   const toggleFullscreen = React.useCallback((): void => {
     if (document.fullscreenElement) {
-      void document.exitFullscreen();
+      document.exitFullscreen().catch(() => undefined);
     } else if (readerRef.current?.requestFullscreen) {
-      void readerRef.current.requestFullscreen();
+      readerRef.current.requestFullscreen().catch(() => undefined);
     }
   }, []);
 
@@ -231,6 +242,10 @@ export const Flipbook: React.FC<IFlipbookProps> = props => {
 
   if (pdf.error) {
     return <ErrorState error={pdf.error} />;
+  }
+
+  if (runtimeError) {
+    return <ErrorState error={runtimeError} />;
   }
 
   if (!pdf.document) {

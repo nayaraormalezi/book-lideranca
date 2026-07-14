@@ -51,7 +51,7 @@ export function usePdf(
             progress: 100
           });
         } else {
-          await loadedDocument.destroy();
+          await loadedDocument.cleanup();
         }
       } catch (error) {
         if (!active) {
@@ -75,12 +75,12 @@ export function usePdf(
       }
     };
 
-    void loadPdf();
+    loadPdf().catch(() => undefined);
 
     return () => {
       active = false;
       if (loadedDocument) {
-        void loadedDocument.destroy();
+        loadedDocument.cleanup().catch(() => undefined);
       }
     };
   }, [pdfUrl, sharePointService, pdfService]);

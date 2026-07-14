@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "book-lideranca-client-side-solution",
+    "name": "PDF Flipbook Reader",
     "id": "6f602246-0489-42ae-8d53-e73ca7d40f11",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -16,19 +16,19 @@
     },
     "metadata": {
       "shortDescription": {
-        "default": "book-lideranca description"
+        "default": "Responsive PDF flipbook reader for SharePoint Online"
       },
       "longDescription": {
-        "default": "book-lideranca description"
+        "default": "Corporate PDF reader with lazy rendering, thumbnails, zoom, full screen and realistic page turning."
       },
       "screenshotPaths": [],
       "videoUrl": "",
-      "categories": []
+      "categories": ["Productivity"]
     },
     "features": [
       {
-        "title": "book-lideranca Feature",
-        "description": "The feature that activates elements of the book-lideranca solution.",
+        "title": "PDF Flipbook Reader Feature",
+        "description": "Installs the PDF Flipbook Reader web part.",
         "id": "d306a96d-8cdd-4359-b1ce-5b4802073ff5",
         "version": "1.0.0.0"
       }

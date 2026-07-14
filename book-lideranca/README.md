@@ -72,8 +72,8 @@ zoom, tela cheia, contador e modo inicial.
 npm run build
 
 # comandos explícitos equivalentes
-npx heft test --clean --production
-npx heft package-solution --production
+npm run bundle
+npm run package-solution
 ```
 
 O pacote é gerado em:
@@ -93,9 +93,9 @@ SPFx 1.23.2. Os equivalentes suportados são:
 
 | Legado | SPFx 1.23.2 |
 |---|---|
-| `gulp serve` | `npm run start` |
-| `gulp bundle --ship` | `npx heft test --clean --production` |
-| `gulp package-solution --ship` | `npx heft package-solution --production` |
+| `gulp serve` | `npm run serve` |
+| `gulp bundle --ship` | `npm run bundle` |
+| `gulp package-solution --ship` | `npm run package-solution` |
 
 ## Configurações
 
@@ -113,7 +113,7 @@ SPFx 1.23.2. Os equivalentes suportados são:
 - Nenhuma permissão API adicional é solicitada no manifesto.
 - O Web Part não contorna permissões do SharePoint.
 - O arquivo é carregado em memória e não é persistido em armazenamento local.
-- `isEvalSupported: false` reduz a superfície de execução do PDF.js.
+- O PDF.js executa o processamento em Web Worker empacotado com a solução.
 - Para PDFs muito grandes, o arquivo ainda precisa ser transferido por completo;
   a renderização visual, porém, permanece sob demanda.
 

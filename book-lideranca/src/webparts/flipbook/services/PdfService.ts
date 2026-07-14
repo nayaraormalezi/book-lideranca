@@ -7,6 +7,11 @@ import {
 } from 'pdfjs-dist';
 import { IPdfService, PdfReaderError } from '../models';
 
+interface IPdfProgress {
+  loaded: number;
+  total: number;
+}
+
 GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
   import.meta.url
@@ -24,11 +29,10 @@ export class PdfService implements IPdfService {
     try {
       loadingTask = getDocument({
         data: new Uint8Array(data),
-        isEvalSupported: false,
         useSystemFonts: true
       });
 
-      loadingTask.onProgress = progress => {
+      loadingTask.onProgress = (progress: IPdfProgress) => {
         if (onProgress && progress.total > 0) {
           onProgress(Math.min(100, Math.round((progress.loaded / progress.total) * 100)));
         }
@@ -73,10 +77,7 @@ export class PdfService implements IPdfService {
     const scale = Math.max(0.1, (targetWidth / unscaledViewport.width) * qualityScale);
     const viewport = page.getViewport({ scale });
 
-    canvas.width = Math.floor(viewport.width * pixelRatio);
-    canvas.height = Math.floor(viewport.height * pixelRatio);
-    canvas.style.width = `${Math.floor(viewport.width)}px`;
-    canvas.style.height = `${Math.floor(viewport.height)}px`;
+    this.resizeCanvas(canvas, viewport.width, viewport.height, pixelRatio);
 
     const context = canvas.getContext('2d', { alpha: false });
     if (!context) {
@@ -103,5 +104,17 @@ export class PdfService implements IPdfService {
         this.activeRenders.delete(canvas);
       }
     }
+  }
+
+  private resizeCanvas(
+    canvas: HTMLCanvasElement,
+    width: number,
+    height: number,
+    pixelRatio: number
+  ): void {
+    canvas.width = Math.floor(width * pixelRatio);
+    canvas.height = Math.floor(height * pixelRatio);
+    canvas.style.width = `${Math.floor(width)}px`;
+    canvas.style.height = `${Math.floor(height)}px`;
   }
 }

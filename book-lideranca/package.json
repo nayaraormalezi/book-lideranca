@@ -7,8 +7,11 @@
   },
   "scripts": {
     "build": "heft test --clean --production && heft package-solution --production",
+    "bundle": "heft test --clean --production",
     "clean": "heft clean",
     "eject-webpack": "heft eject-webpack",
+    "package-solution": "heft package-solution --production",
+    "serve": "heft start --clean",
     "start": "heft start --clean"
   },
   "dependencies": {

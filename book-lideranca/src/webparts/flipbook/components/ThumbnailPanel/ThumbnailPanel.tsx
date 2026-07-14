@@ -44,13 +44,13 @@ const Thumbnail: React.FC<IThumbnailProps> = props => {
 
   React.useEffect(() => {
     if (visible && canvasRef.current) {
-      void props.pdfService.renderPage(
+      props.pdfService.renderPage(
         props.document,
         props.pageIndex + 1,
         canvasRef.current,
         112,
         1
-      );
+      ).catch(() => undefined);
     }
   }, [visible, props.document, props.pageIndex, props.pdfService]);
 
