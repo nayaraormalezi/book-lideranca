@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "b7c1e9a4-3f2d-4c8b-9a6e-1d5f7c8b2e42",
+  "alias": "FlipbookWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "SharePointFullPage", "TeamsTab", "TeamsPersonalApp"],
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": { "default": "Advanced" },
+      "title": { "default": "Flipbook PDF Viewer" },
+      "description": { "default": "Leitor de e-book em PDF com efeito realista de virar páginas, carregado de uma biblioteca do SharePoint." },
+      "officeFabricIconFontName": "OpenFile",
+      "properties": {
+        "title": "",
+        "pdfUrl": "",
+        "primaryColor": "#0078D4",
+        "toolbarColor": "#201F1E",
+        "backgroundColor": "#EDEBE9",
+        "showThumbnails": true,
+        "showZoom": true,
+        "showFullscreen": true,
+        "showPageCounter": true,
+        "openOnCover": true,
+        "doublePageMode": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "pdf-flipbook-client-side-solution",
+    "id": "9f6a2d3e-7b1a-4a0e-9d4c-2b8e6f7c4a10",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "undefined"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Flipbook PDF Viewer - leitor de e-book profissional para SharePoint Online"
+      },
+      "longDescription": {
+        "default": "Web Part que transforma um PDF armazenado em uma biblioteca de documentos do SharePoint Online em um leitor de e-book interativo, com efeito realista de virar páginas, zoom, tela cheia, miniaturas e navegação completa."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "pdf-flipbook Feature",
+        "description": "Ativa o Web Part Flipbook PDF Viewer no site.",
+        "id": "b7c1e9a4-3f2d-4c8b-9a6e-1d5f7c8b2e40",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/pdf-flipbook.sppkg"
+  }
+}

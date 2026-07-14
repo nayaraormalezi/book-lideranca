@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Build generated files
+dist
+lib
+release
+solution
+temp
+*.sppkg
+coverage
+
+# Package artifacts
+*.zip
+*.tgz
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sln.ide
+.vs
+*.swp
+
+# SPFx debug
+.heft
+.serve.json
+*.debug.log

@@ -1,0 +1,40 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pageCounter {
+  font-size: 13px;
+  color: inherit;
+  padding: 0 8px;
+  white-space: nowrap;
+  opacity: 0.92;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: currentColor;
+  opacity: 0.25;
+  margin: 0 6px;
+}
+
+.iconButton {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}

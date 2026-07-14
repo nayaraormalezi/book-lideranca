@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "initialPage": "https://{tenantDomain}/_layouts/workbench.aspx",
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://{tenantDomain}/_layouts/workbench.aspx"
+    },
+    "flipbookWebPart": {
+      "pageUrl": "https://{tenantDomain}/_layouts/workbench.aspx"
+    }
+  }
+}

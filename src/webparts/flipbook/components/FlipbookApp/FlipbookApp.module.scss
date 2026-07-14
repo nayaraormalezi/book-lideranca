@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 640px;
+  min-height: 320px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.13), 0 0.3px 0.9px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.rootFullscreen {
+  height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.stageWrapper {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}

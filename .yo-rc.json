@@ -1,0 +1,20 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdkVersions": {
+      "@microsoft/microsoft-graph-client": ""
+    },
+    "version": "1.21.1",
+    "libraryName": "pdf-flipbook",
+    "libraryId": "9f6a2d3e-7b1a-4a0e-9d4c-2b8e6f7c4a10",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "pdf-flipbook",
+    "solutionShortDescription": "Web Part de leitura de e-book/PDF em SharePoint Online com efeito de virar páginas",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
