@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "book-lideranca-client-side-solution",
+    "id": "6f602246-0489-42ae-8d53-e73ca7d40f11",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "book-lideranca description"
+      },
+      "longDescription": {
+        "default": "book-lideranca description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "book-lideranca Feature",
+        "description": "The feature that activates elements of the book-lideranca solution.",
+        "id": "d306a96d-8cdd-4359-b1ce-5b4802073ff5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/book-lideranca.sppkg"
+  }
+}

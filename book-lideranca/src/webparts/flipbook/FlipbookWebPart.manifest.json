@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "499e4012-85e4-4001-92a3-cbcf4d059d1b",
+  "alias": "FlipbookWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
+    "group": { "default": "Media and Content", "pt-br": "Mídia e Conteúdo" },
+    "title": { "default": "PDF Flipbook", "pt-br": "Leitor de PDF" },
+    "description": {
+      "default": "Corporate PDF reader with realistic page turning",
+      "pt-br": "Leitor corporativo de PDFs com efeito realista de livro"
+    },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "pdfUrl": "",
+      "primaryColor": "#0078D4",
+      "toolbarColor": "#201F1E",
+      "backgroundColor": "#EDEBE9",
+      "showThumbnails": true,
+      "showZoom": true,
+      "showFullscreen": true,
+      "showPageCounter": true,
+      "openAtCover": true,
+      "openInDoublePage": true
+    }
+  }]
+}

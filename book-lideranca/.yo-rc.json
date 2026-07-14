@@ -1,0 +1,23 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "book-lideranca",
+    "environment": "spo",
+    "packageManager": "npm",
+    "skipFeatureDeployment": true,
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "Flipbook",
+    "componentDescription": "Leitor corporativo de PDFs com efeito de livro",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.23.2",
+    "libraryName": "book-lideranca",
+    "libraryId": "6f602246-0489-42ae-8d53-e73ca7d40f11",
+    "solutionShortDescription": "book-lideranca description",
+    "isDomainIsolated": false
+  }
+}
